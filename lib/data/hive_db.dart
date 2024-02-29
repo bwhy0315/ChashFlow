@@ -1,15 +1,10 @@
 import 'package:hive_flutter/hive_flutter.dart';
-
 import '../models/expense_item.dart';
 
 class HiveDataBase {
-
   final _myBox = Hive.box("expense_db");
 
   void saveData(List<ExpenseItem> allExpense){
-    
-
-
 
     List<List<dynamic>> allExpensesFormatted = [];
 
@@ -41,9 +36,7 @@ class HiveDataBase {
       );
       allExpense.add(expense);
     }
+    
     return allExpense;
   }
-
-  
-
 }

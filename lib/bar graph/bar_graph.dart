@@ -1,7 +1,8 @@
-import 'package:expence_tracker/bar%20graph/bar_data.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import 'bar_data.dart';
 
 class BarGraph extends StatelessWidget {
   final double? maxY;
@@ -119,7 +120,7 @@ Widget getBottomTitles(double value, TitleMeta meta){
       break;
   }
   return SideTitleWidget(
-    child: text, 
-    axisSide: meta.axisSide
+    axisSide: meta.axisSide,
+    child: text
   );
 }
