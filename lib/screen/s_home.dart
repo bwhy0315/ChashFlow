@@ -66,8 +66,10 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, value, child) => Scaffold(
         backgroundColor: Colors.grey[300],
         floatingActionButton: FloatingActionButton(
+          shape: CircleBorder(),
+          backgroundColor: Colors.black,
           onPressed: addNewExpense,
-          child:const  Icon(Icons.add),
+          child:const  Icon(Icons.add,color: Colors.white,),
         ),
         body: ListView(
           children: [

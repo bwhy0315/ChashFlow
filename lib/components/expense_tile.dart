@@ -32,10 +32,10 @@ class ExpenseTile extends StatelessWidget {
         ]
       ),
       child: ListTile(
-        title: name.text.make(),
+        title: name.text.size(17).make().pOnly(bottom: 5),
         subtitle: '${dateTime.year} / ${dateTime.month} / ${dateTime.day}'.text.make(),
-        trailing: '${f.format(int.parse(amount))}원'.text.make(),
-      ),
+        trailing: '${f.format(int.parse(amount))}원'.text.size(15).make(),
+      ).p(5),
     );
   }
 }

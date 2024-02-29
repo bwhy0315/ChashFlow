@@ -5,9 +5,7 @@ import 'data/expense_data.dart';
 import 'screen/s_home.dart';
 
 void main() async {
-
   await Hive.initFlutter();
-
   await Hive.openBox("expense_db");
 
   runApp(const MyApp());
@@ -27,4 +25,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
