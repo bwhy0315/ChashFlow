@@ -15,7 +15,7 @@ void main() async {
 
   await Hive.initFlutter();
   await Hive.openBox("expense_db");
-
+  
   runApp(const MyApp());
 }
 
