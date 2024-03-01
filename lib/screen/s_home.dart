@@ -71,6 +71,39 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: addNewExpense,
           child:const  Icon(Icons.add,color: Colors.white,),
         ),
+        appBar: AppBar(
+          title: 'CashFlow'.text.white.make(),
+          centerTitle: true,
+          backgroundColor: Colors.black,
+          iconTheme: const IconThemeData(color: Colors.white)
+        ),
+        drawer: Drawer(
+          shadowColor: Colors.white,
+          backgroundColor: Colors.white,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                child: 'white'.text.white.center.make(),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                ),
+              ),
+              ListTile(
+                title: Text('Item 1'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Item 2'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
         body: ListView(
           children: [
             // 지출
