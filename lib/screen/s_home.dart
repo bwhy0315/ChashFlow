@@ -69,7 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
           shape: CircleBorder(),
           backgroundColor: Colors.black,
           onPressed: addNewExpense,
-          child:const  Icon(Icons.add,color: Colors.white,),
+          child:const  Icon(
+            Icons.add,
+            color: Colors.white
+            ),
         ),
         appBar: AppBar(
           title: 'CashFlow'.text.white.make(),
@@ -127,3 +130,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+  
