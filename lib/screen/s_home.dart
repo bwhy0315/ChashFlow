@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
+import '../components/drawer.dart';
 import '../components/expense_dialog.dart';
 import '../components/expense_summary.dart';
 import '../components/expense_tile.dart';
@@ -62,51 +63,28 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final styleBackground = Theme.of(context).colorScheme.background;
+    final stylePrimary = Theme.of(context).colorScheme.primary;
+    
     return Consumer<ExpenseData>(
       builder: (context, value, child) => Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Theme.of(context).colorScheme.background,
         floatingActionButton: FloatingActionButton(
-          shape: CircleBorder(),
-          backgroundColor: Colors.black,
+          shape:const CircleBorder(),
+          backgroundColor: styleBackground,
           onPressed: addNewExpense,
-          child:const  Icon(
+          child: Icon(
             Icons.add,
-            color: Colors.white
+            color: stylePrimary
             ),
         ),
         appBar: AppBar(
-          title: 'CashFlow'.text.white.make(),
+          title: 'CashFlow'.text.textStyle(TextStyle(color: stylePrimary)).white.make(),
           centerTitle: true,
-          backgroundColor: Colors.black,
-          iconTheme: const IconThemeData(color: Colors.white)
+          backgroundColor: stylePrimary,
+          iconTheme: IconThemeData(color: styleBackground)
         ),
-        drawer: Drawer(
-          shadowColor: Colors.white,
-          backgroundColor: Colors.white,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              DrawerHeader(
-                child: 'white'.text.white.center.make(),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                ),
-              ),
-              ListTile(
-                title: Text('Item 1'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Item 2'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: MyDrawer(),
         body: ListView(
           children: [
             // 지출

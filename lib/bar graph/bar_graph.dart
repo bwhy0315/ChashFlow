@@ -28,6 +28,9 @@ class BarGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    final styleBackground = Theme.of(context).colorScheme.background;
+    final stylePrimary = Theme.of(context).colorScheme.primary;
 
     BarData myBarData = BarData(
       sunAmount: sunAmount,
@@ -66,20 +69,19 @@ class BarGraph extends StatelessWidget {
                 barRods: [
                   BarChartRodData(
                     toY: data.y,
-                    color: Colors.grey[800],
+                    color: stylePrimary,
                     width: 25,
                     borderRadius: BorderRadius.circular(4),
                     backDrawRodData: BackgroundBarChartRodData(
                       show: true,
                       toY: maxY,
-                      color: Colors.grey[200] 
+                      color: styleBackground 
                     )
                   ),
                 ]
               )
             )
             .toList(),
-
       )
     );
   }
@@ -87,7 +89,7 @@ class BarGraph extends StatelessWidget {
 
 Widget getBottomTitles(double value, TitleMeta meta){
   const style = TextStyle(
-    color: Colors.grey,
+    color: Color.fromARGB(255, 127, 127, 127),
     fontWeight: FontWeight.bold,
     fontSize: 15 
   );

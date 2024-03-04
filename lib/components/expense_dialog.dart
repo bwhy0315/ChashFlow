@@ -18,18 +18,20 @@ class ExpenseDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var styleBackground = Theme.of(context).colorScheme.background;
+    var stylePrimary = Theme.of(context).colorScheme.primary;
     return Dialog(
       child: Container(
         width: 180,
         height: 250,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: styleBackground,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.black, width: 2),
+          border: Border.all(color: stylePrimary, width: 2),
         ),
         child: Column(
           children: [
-            '음식지출'.text.size(20).make(),
+            '음식지출'.text.textStyle(TextStyle(color: stylePrimary)).size(20).make(),
             TextField(
               controller: nameController,
               decoration: const InputDecoration(
@@ -48,14 +50,14 @@ class ExpenseDialog extends StatelessWidget {
               children: [
                 MaterialButton(
                   onPressed: onSave,
-                  color: Colors.black,
-                  child: '저장'.text.white.make(),
+                  color: stylePrimary,
+                  child: '저장'.text.textStyle(TextStyle(color: styleBackground)).make(),
                 ),
                 width5,
                 MaterialButton(
                   onPressed: onCancel,
-                  color: Colors.black,
-                  child: '취소'.text.white.make(),
+                  color: stylePrimary,
+                  child: '취소'.text.textStyle(TextStyle(color: styleBackground)).white.make(),
                 )
               ],
             ).pOnly(top: 15),

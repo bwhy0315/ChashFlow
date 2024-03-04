@@ -20,6 +20,9 @@ class ExpenseTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var f = NumberFormat('###,###,###,###');
+    final textStyle = TextStyle(
+      color: Theme.of(context).colorScheme.primary
+    );
     return Slidable(
       endActionPane: ActionPane(
         motion: const StretchMotion(), 
@@ -32,13 +35,9 @@ class ExpenseTile extends StatelessWidget {
         ]
       ),
       child: ListTile(
-        title: name.text.size(17).make().pOnly(bottom: 5),
-        subtitle: '${dateTime.year} / ${dateTime.month} / ${dateTime.day}'.text.textStyle(
-          TextStyle(
-            color: Theme.of(context).colorScheme.background
-          )
-        ).make(),
-        trailing: '${f.format(int.parse(amount))}원'.text.size(15).make(),
+        title: name.text.textStyle(textStyle).size(17).make().pOnly(bottom: 5),
+        subtitle: '${dateTime.year} / ${dateTime.month} / ${dateTime.day}'.text.textStyle(textStyle).make(),
+        trailing: '${f.format(int.parse(amount))}원'.text.textStyle(textStyle).size(15).make(),
       ).p(5),
     );
   }

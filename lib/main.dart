@@ -28,7 +28,7 @@ void main() async {
           create: (context) => ThemeProvider(),
         ),
       ],
-      child: MyApp(),
+      child:const MyApp(),
     ),
   );
 }
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: themeProvider.themeData,
-      home: HomeScreen(),
+      home:const HomeScreen(),
     );
   }
 }

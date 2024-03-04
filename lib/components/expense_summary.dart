@@ -34,6 +34,9 @@ class _ExpenseSummaryState extends State<ExpenseSummary> {
     String saturday = convertDateTimeToString(widget.startOfWeek.add(const Duration(days: 6)));
 
     var f = NumberFormat('###,###,###,###');
+    final styleBackground = Theme.of(context).colorScheme.background;
+    final stylePrimary = Theme.of(context).colorScheme.primary;
+
     return Consumer<ExpenseData>(
       builder: (context, value, child) => Column(
         children: [
@@ -57,8 +60,8 @@ class _ExpenseSummaryState extends State<ExpenseSummary> {
                     isTotal = !isTotal;
                   });
                 },
-                color: Colors.black,
-                child: Text(isTotal ? '1주 총소비액' : '1달 총소비액', style: const TextStyle(color: Colors.white),),
+                color: stylePrimary,
+                child: Text(isTotal ? '1주 총소비액' : '1달 총소비액', style: TextStyle(color: styleBackground),),
               ).pOnly(right: 25),
             ],
           ),

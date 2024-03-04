@@ -6,17 +6,17 @@ class TotalExpensesRow extends StatelessWidget {
   final String amount;
 
   const TotalExpensesRow({
-    Key? key,
+    super.key,
     required this.label,
     required this.amount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        '$label: '.text.bold.make(),
-        '$amount원'.text.make(),
+        '$label: '.text.textStyle(TextStyle(color: Theme.of(context).colorScheme.primary)).bold.make(),
+        '$amount원'.text.textStyle(TextStyle(color: Theme.of(context).colorScheme.primary)).make(),
       ],
     ).p(25);
   }
