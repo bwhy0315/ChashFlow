@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../sized/container_sized.dart';
 
 class ExpenseDialog extends StatelessWidget {
@@ -20,9 +19,10 @@ class ExpenseDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     var styleBackground = Theme.of(context).colorScheme.background;
     var stylePrimary = Theme.of(context).colorScheme.primary;
+
     return Dialog(
       child: Container(
-        width: 180,
+        width: 200,
         height: 250,
         decoration: BoxDecoration(
           color: styleBackground,
@@ -57,7 +57,7 @@ class ExpenseDialog extends StatelessWidget {
                 MaterialButton(
                   onPressed: onCancel,
                   color: stylePrimary,
-                  child: '취소'.text.textStyle(TextStyle(color: styleBackground)).white.make(),
+                  child: '취소'.text.textStyle(TextStyle(color: styleBackground)).make(),
                 )
               ],
             ).pOnly(top: 15),
@@ -67,4 +67,3 @@ class ExpenseDialog extends StatelessWidget {
     );
   }
 }
-

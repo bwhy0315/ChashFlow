@@ -1,6 +1,5 @@
 import 'package:expence_tracker/screen/s_setting.dart';
 import 'package:flutter/material.dart';
-
 import '../oss_licenses_page.dart';
 import 'drawer_tile.dart';
 
@@ -18,19 +17,19 @@ class _MyDrawerState extends State<MyDrawer> {
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             child: Icon(Icons.money)
           ),
           DrawerTile(
             title: "H O M E",
-            leading: Icon(Icons.home),
+            leading: const Icon(Icons.home),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           DrawerTile(
             title: "S E T T I N G",
-            leading: Icon(Icons.settings),
+            leading: const Icon(Icons.settings),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -43,7 +42,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           DrawerTile(
             title: "O P E N - S O U R C E       - L I C E N S E S",
-            leading: Icon(Icons.book),
+            leading: const Icon(Icons.book),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(

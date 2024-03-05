@@ -28,9 +28,6 @@ class BarGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    final styleBackground = Theme.of(context).colorScheme.background;
-    final stylePrimary = Theme.of(context).colorScheme.primary;
 
     BarData myBarData = BarData(
       sunAmount: sunAmount,
@@ -69,13 +66,13 @@ class BarGraph extends StatelessWidget {
                 barRods: [
                   BarChartRodData(
                     toY: data.y,
-                    color: stylePrimary,
+                    color: Theme.of(context).colorScheme.primary,
                     width: 25,
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(5),
                     backDrawRodData: BackgroundBarChartRodData(
                       show: true,
                       toY: maxY,
-                      color: styleBackground 
+                      color: Theme.of(context).colorScheme.secondary
                     )
                   ),
                 ]
@@ -87,42 +84,39 @@ class BarGraph extends StatelessWidget {
   }
 }
 
-Widget getBottomTitles(double value, TitleMeta meta){
+Widget getBottomTitles(double value, TitleMeta meta) {
   const style = TextStyle(
     color: Color.fromARGB(255, 127, 127, 127),
     fontWeight: FontWeight.bold,
-    fontSize: 15 
+    fontSize: 15,
   );
 
-  Widget text;
-  switch(value.toInt()){
-    case 0:
-      text = '월'.text.textStyle(style).make();
-      break;
-    case 1:
-      text = '화'.text.textStyle(style).make();
-      break;
-    case 2:
-      text = '수'.text.textStyle(style).make();
-      break;
-    case 3:
-      text = '목'.text.textStyle(style).make();
-      break;
-    case 4:
-      text = '금'.text.textStyle(style).make();
-      break;
-    case 5:
-      text = '토'.text.textStyle(style).make();
-      break;
-    case 6:
-      text = '일'.text.textStyle(style).make();
-      break;
-    default:
-      text = ''.text.textStyle(style).make();
-      break;
+  String getTitleText(int dayIndex) {
+    switch (dayIndex) {
+      case 0:
+        return '월';
+      case 1:
+        return '화';
+      case 2:
+        return '수';
+      case 3:
+        return '목';
+      case 4:
+        return '금';
+      case 5:
+        return '토';
+      case 6:
+        return '일';
+      default:
+        return '';
+    }
   }
-  return SideTitleWidget(
+
+  String text = getTitleText(value.toInt());
+  Widget sideTitleWidget = SideTitleWidget(
     axisSide: meta.axisSide,
-    child: text
+    child: text.text.textStyle(style).make(),
   );
+
+  return sideTitleWidget;
 }

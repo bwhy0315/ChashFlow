@@ -10,7 +10,7 @@ class MiscOssLicenseSingle extends StatelessWidget {
   String get licenseText => json['license'];
   //String get homepage => json['homepage'];
 
-  MiscOssLicenseSingle({required this.name, required this.json});
+  const MiscOssLicenseSingle({super.key, required this.name, required this.json});
 
   String _bodyText() {
     return licenseText.split('\n').map((line) {

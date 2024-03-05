@@ -70,21 +70,21 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, value, child) => Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         floatingActionButton: FloatingActionButton(
-          shape:const CircleBorder(),
-          backgroundColor: styleBackground,
+          shape: const CircleBorder(),
+          backgroundColor: stylePrimary,
           onPressed: addNewExpense,
           child: Icon(
             Icons.add,
-            color: stylePrimary
+            color: styleBackground
             ),
         ),
         appBar: AppBar(
-          title: 'CashFlow'.text.textStyle(TextStyle(color: stylePrimary)).white.make(),
+          title: 'C A S H F L O W'.text.bold.textStyle(TextStyle(color: styleBackground)).make(),
           centerTitle: true,
           backgroundColor: stylePrimary,
           iconTheme: IconThemeData(color: styleBackground)
         ),
-        drawer: MyDrawer(),
+        drawer: const MyDrawer(),
         body: ListView(
           children: [
             // 지출

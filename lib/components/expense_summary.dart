@@ -12,9 +12,9 @@ class ExpenseSummary extends StatefulWidget {
   final DateTime startOfWeek;
 
   const ExpenseSummary({
-    Key? key, 
+    super.key, 
     required this.startOfWeek
-  }) : super(key: key);
+  });
 
   @override
   _ExpenseSummaryState createState() => _ExpenseSummaryState();
@@ -47,7 +47,8 @@ class _ExpenseSummaryState extends State<ExpenseSummary> {
                 children: [
                   TotalExpensesRow(
                     label: isTotal ? '한달 총 소비' :'주간 총 소비',
-                    amount: f.format(isTotal
+                    amount: f.format(
+                        isTotal
                         ? calculateMonthTotal(value, widget.startOfWeek)
                         : calculateWeekTotal(value, sunday, monday, tuesday, wednesday, thursday, friday, saturday)
                     ),
@@ -61,7 +62,7 @@ class _ExpenseSummaryState extends State<ExpenseSummary> {
                   });
                 },
                 color: stylePrimary,
-                child: Text(isTotal ? '1주 총소비액' : '1달 총소비액', style: TextStyle(color: styleBackground),),
+                child: (isTotal ? '1주 총소비액' : '1달 총소비액').text.textStyle(TextStyle(color: styleBackground)).make(),
               ).pOnly(right: 25),
             ],
           ),

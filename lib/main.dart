@@ -1,4 +1,3 @@
-import 'package:expence_tracker/theme/theme.dart';
 import 'package:expence_tracker/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,6 +7,7 @@ import 'data/expense_data.dart';
 import 'screen/s_home.dart';
 
 void main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -37,10 +37,9 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    var themeProvider = Provider.of<ThemeProvider>(context, listen: false);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: themeProvider.themeData,
+      theme: Provider.of<ThemeProvider>(context).themeData,
       home:const HomeScreen(),
     );
   }
