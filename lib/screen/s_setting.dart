@@ -17,7 +17,6 @@ class SettingScreen extends StatelessWidget {
             color: Theme.of(context).colorScheme.primary
           )
         ).make(),
-        
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.primary,
       ),
