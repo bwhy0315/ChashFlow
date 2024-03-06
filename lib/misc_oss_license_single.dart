@@ -24,16 +24,17 @@ class MiscOssLicenseSingle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          color: Theme.of(context).canvasColor,
-          child: ListView(children: <Widget>[
-            if (description != null)
-              description.text.make().pOnly(top: 12, left: 12, right: 12),
-              const Divider(),
+        color: Theme.of(context).canvasColor,
+        child: ListView(children: <Widget>[
+          if (description != null)
+            description.text.make().pOnly(top: 12, left: 12, right: 12),
+            const Divider(),
             Text(
-                _bodyText(),
-                style: Theme.of(context).textTheme.bodyMedium
+              _bodyText(),
+              style: Theme.of(context).textTheme.bodyMedium
             ).pOnly(top: 12, left: 12, right: 12),
-          ])
+          ]
+        )
       ),
     );
   }

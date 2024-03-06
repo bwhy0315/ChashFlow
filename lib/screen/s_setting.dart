@@ -11,6 +11,13 @@ class SettingScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
+        centerTitle: true,
+        title: "S E T T I N G".text.textStyle(
+          TextStyle(
+            color: Theme.of(context).colorScheme.primary
+          )
+        ).make(),
+        
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.primary,
       ),

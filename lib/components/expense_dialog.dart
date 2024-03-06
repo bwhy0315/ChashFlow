@@ -31,11 +31,11 @@ class ExpenseDialog extends StatelessWidget {
         ),
         child: Column(
           children: [
-            '음식지출'.text.textStyle(TextStyle(color: stylePrimary)).size(20).make(),
+            '지출 정보'.text.textStyle(TextStyle(color: stylePrimary)).size(20).make(),
             TextField(
               controller: nameController,
               decoration: const InputDecoration(
-                hintText: '음식 이름',
+                hintText: '지출 내용',
               ),
             ),
             TextField(
